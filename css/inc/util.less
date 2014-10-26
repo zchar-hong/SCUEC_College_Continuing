@@ -1,0 +1,113 @@
+@import 'var.less';
+
+// 清除浮动
+.clearfix() {
+    display: block;
+    &:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+}
+
+// inline-block的兼容显示效果
+.inline-block() {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+
+//单行文字超出显示省略号
+.ellipse-overflow() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+//隐藏文字
+.text-hide(){
+    display:block;
+    font-size:0;
+    text-indent:-99999em;
+    color:transparent;
+}
+
+// Opacity
+.opacity(@opacity) {
+    opacity: @opacity / 100;
+    filter: ~"alpha(opacity=@{opacity})";
+}
+
+// 设定宽高
+.size(@size) {
+    width: @size;
+    height: @size;
+}
+.size(@wdith, @height) {
+    width: @wdith;
+    height: @height;
+}
+
+// 背景函数
+.background (@image-url, @repeat-type:no-repeat, @s-x:0, @s-y:0, @b-color:transparent) {
+    background-image: url("@{base-url}@{image-url}");
+    background-repeat: @repeat-type;
+    background-position: @s-x @s-y;
+    background-color: @b-color;
+}
+
+// 线性渐变背景
+// @direction 渐变方向
+// @from-color 起始颜色
+// @to-color 终止颜色
+// @b-color 背景色
+.linear-gradient-background ( @direction:top, @from-color, @to-color, @b-color:transparent) {
+    @top: 0% 0%, 0% 100%;
+    @left: 0% 0%, 100% 0%;
+    @bottom: 0% 100%, 0% 0%;
+    @right: 100% 0%, 0% 0%;
+
+    background: @b-color;
+
+    // Safari 4-5, Chrome 1-9
+    background: 
+        -webkit-gradient(linear, @@direction, from(@from-color), to(@to-color));
+  
+    // Safari 5.1, Chrome 10+
+    background:
+        -webkit-linear-gradient(@direction, @from-color, @to-color);
+  
+    // Firefox 3.6+
+    background:
+        -moz-linear-gradient(@direction, @from-color, @to-color);
+  
+    // IE 10
+    background:
+        -ms-linear-gradient(@direction, @from-color, @to-color);
+  
+    // Opera 11.10+
+    background:
+        -o-linear-gradient(@direction, @from-color, @to-color);
+}
+
+.border-radius(@radius){
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+}
+
+.box-shadow(@param1,@param2,@param3,@opacity){
+    -webkit-box-shadow: @param1 @param2 @param3 rgba(0, 0, 0, @opacity);
+    -moz-box-shadow: @param1 @param2 @param3 rgba(0, 0, 0, @opacity);
+    box-shadow: @param1 @param2 @param3 rgba(0, 0, 0, @opacity);
+}
+
+.inner-shadow(@param1,@param2,@param3,@opacity){
+    -webkit-box-shadow:inset @param1 @param2 @param3 rgba(0, 0, 0, @opacity);
+       -moz-box-shadow:inset @param1 @param2 @param3 rgba(0, 0, 0, @opacity);
+            box-shadow:inset @param1 @param2 @param3 rgba(0, 0, 0, @opacity);
+}
+

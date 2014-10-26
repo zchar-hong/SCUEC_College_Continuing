@@ -1,0 +1,148 @@
+@import 'inc/reset.less';
+@import 'inc/util.less';
+
+//-----------------------general-------------------- 
+.reset();
+
+body {
+    font: @default-font-size/1.5 @default-font-family;
+    color: @default-font-color;
+    background-color: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: @theme-main-color;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+// 1070px的包裹块
+.wrapper(){
+    width: 990px;
+    margin: 0 auto;
+}
+
+
+.border(){
+    border: 1px solid @theme-main-color;
+}
+
+
+//-----header----------
+.imgBox {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    .background('out-logo.jpg',repeat);
+}
+#header {
+    position: relative;
+    left: 50%;
+    margin-left: -495px;
+    width: 990px;
+    height: 93px;
+    .background('logo.jpg','no-repeat');
+    text-indent: -999em;
+
+    div {
+        text-indent: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-size: 12px;
+        font-color: #fff;
+        color: #fff;
+        line-height: 33px;
+        padding:0 12px 0 10px;
+        .background('contact-bg.jpg');
+
+        a {
+            font-size: 13px;
+            color: #fff;
+            font-weight: bold;
+        }
+    }
+}
+
+// --------nav-----------
+#nav {
+    height: 30px;
+
+    .background('nav-bg.jpg',repeat);
+
+    ul {
+        list-style: none;
+        width: 990px;
+        margin: 0 auto;
+        line-height: 30px;
+
+
+        li {
+            float: left;
+            border-left: 1px solid #bdbdbd;
+            border-right: 1px solid #eaeaea;
+            
+            a {
+                display: block;
+                font-size: 12px;
+                padding: 0 35px;
+                font-weight: bold;
+                color: #3a3a3a;
+
+                &:hover {
+                    text-decoration: none;
+                    color: #000;
+                    transition:color .5s ease-in-out;
+                }
+            }
+        }        
+    }    
+}
+
+// -------------footer
+#footer {
+    color: #333;
+    font-size: 14px;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #eeebe3;   
+    border-top: 1px solid @border-color;
+    line-height: 2em;
+
+    a {
+        font-size: 15px;
+        color: #333;
+
+        &:hover {
+            color: #000;
+        }
+    }
+}
+
+// --------commom------------
+.pos {
+    background-color: @theme-main-color;
+    border-radius: 4px 4px 0 0; 
+    line-height: 40px;
+    padding-left: 17px;
+    font-size: 13px;
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.hidden {
+    display: none;
+}
+
+
+//列表后的时间
+.date {
+    font-size: 11px;
+    color: @date-color;
+    font-style: italic;
+    font-family: Arial,Helvetica,sans-serif;
+}

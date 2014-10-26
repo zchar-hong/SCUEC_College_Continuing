@@ -1,0 +1,12 @@
+{
+  "name": "scuec-org",
+  "version": "0.1.0",
+  "description": "Scuec organization Website",
+  "devDependencies": {
+    "grunt": "latest",
+    "grunt-contrib-less": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-contrib-cssmin": "latest"
+  }
+}

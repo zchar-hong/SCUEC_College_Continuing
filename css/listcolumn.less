@@ -1,0 +1,124 @@
+@import 'comm.less';
+// commom
+
+#listcolumn {
+	#content {
+		.wrapper;
+	    padding: 14px 0px 6px 0px;
+	    .clearfix;
+
+	    #menu {
+	    	float: left;
+	    	background-color: #fcfcfc;
+	    	border: 1px solid #ddd;
+	    	.border-radius(4px);
+	    	width: 230px;
+	    	padding: 1px 1px 0px 1px;
+
+	    	.title {
+	    		border-radius: 4px 4px 0 0; 
+	    		border-bottom:1px solid #ddd;
+	    		width: 190px;
+	    		height: 40px;
+	    		line-height: 40px;
+	    		font-size: 15px;
+	    		color:#fff;
+	    		font-weight: bold;
+	    		text-align: left;
+	    		padding-left: 13px;
+	    		background-color: @theme-main-color;
+	    	}
+	    	table { 
+	    		width: 100%;
+		    	.menu-list {
+	    			&:last-child a{
+	    				border-bottom: none;
+	    			}
+
+	    			//选中样式
+					.select (){
+						background-color: #f1f1f1;
+						color:#4d4d4d;
+						padding: 0 20px;
+						transition:background-color .2s ease-in-out,color .2s ease-in-out,padding .3s ease-in-out;
+						text-decoration: none;		
+					}
+
+					.selected {
+						.select;
+					}
+
+	    			a {
+		    			display: block;
+		    			height: 40px;
+		    			line-height: 40px;
+		    			font-size: 14px;
+		    			color: #7d7d7d;
+		    			border-bottom: 1px solid #ddd;
+		    			padding-left: 17px;
+
+		    			&:hover {
+		    				.select;
+		    			}	    				
+	    			}
+	    		}
+    		}
+	    }
+
+	    // 右部列表
+	    #list {
+	    	float: right;
+	    	width: 920px;
+	    	background-color: #fcfcfc;
+	    	border: 1px solid #ddd;
+	    	.border-radius(4px);
+	    	padding: 1px;
+
+	    	.title {
+	    		table {
+	    			width: 100%;
+	    			td {
+	    				.pos;
+	    				a {
+	    					color: #fff;
+	    					&:hover {
+	    						text-decoration: underline;
+	    						color: #fcfcfc;
+	    					}
+	    				}
+	    			}
+	    		}
+	    	}
+
+	    	.news {
+	    		padding: 15px;
+	    		margin-bottom: 10px;
+
+	    		.news-list {
+	    			width: 100%;
+	    			padding-bottom: 10px;
+
+	    			a {
+		    			display: block;
+		    			padding-left: 10px;
+		    			.background('list-bg.png',no-repeat,left,center);
+		    			line-height: 30px;
+		    			height: 30px;
+
+		    			&:hover {
+	    					cursor: pointer;
+	    					text-decoration: underline;
+		    			}
+
+		    			color: #4d4d4d;
+	    			}
+	    		}
+
+	    		table {
+	    			text-align: right;
+	    		}
+	    	}
+	    }
+	}
+}
+

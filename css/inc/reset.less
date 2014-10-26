@@ -1,0 +1,53 @@
+.reset() {
+    html, body, div, span, h1, h2, h3, h4, h5, h6, 
+    p, a, em, img, strong, tt, ol, ul, li, fieldset, 
+    form, label, table, caption, tbody, tfoot, thead, 
+    tr, th, td {
+        .reset-box-model();
+        .reset-focus();
+        .reset-font();
+    }
+    table {
+        .reset-table();
+    }
+    caption, th, td {
+        .reset-table-cell();
+    }
+    a img {
+        border: none;
+    }
+}
+
+.reset-box-model() {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+.reset-focus() {
+    outline: 0;
+}
+
+.reset-font() {
+    font-weight: inherit;
+    font-style: inherit;
+    font-family: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+.reset-body() {
+    line-height: 1;
+}
+
+.reset-table() {
+    border-collapse: collapse; 
+    border-spacing: 0;
+    vertical-align: middle;
+}
+
+.reset-table-cell() {
+    text-align: left;
+    font-weight: normal;
+    vertical-align: middle;
+}
